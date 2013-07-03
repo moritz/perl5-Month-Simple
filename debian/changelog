@@ -1,5 +1,5 @@
-libmonth-simple-perl (0.01-1) unstable; urgency=low
+libmonth-simple-perl (0.01-1) wheezy; urgency=low
 
-  * Initial Release.
+  * Initial packaging for Debian
 
  -- Moritz Lenz <mlenz@noris.net>  Wed, 3 Jul 2013 13:28:36 +0200
