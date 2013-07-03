@@ -1,3 +1,9 @@
+libmonth-simple-perl (0.02) wheezy; urgency=low
+
+  * More documentation
+
+ -- Moritz Lenz <mlenz@noris.net>  Wed, 03 Jul 2013 17:25:29 +0200
+
 libmonth-simple-perl (0.01-1) wheezy; urgency=low
 
   * Initial packaging for Debian

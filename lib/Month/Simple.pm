@@ -9,7 +9,7 @@ use Carp qw/croak/;
 
 use Data::Dumper;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 use overload
     q[""] => sub { my $d = shift->first_day; return substr "$d", 0, 7 },
@@ -88,7 +88,7 @@ Month::Simple - Simple month-based date arithmetics
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =head1 SYNOPSIS
 
@@ -112,6 +112,31 @@ month (based on the startup of the script, i.e. based on C<$^T>) is returned.
 
 The argument can be a date in format C<YYYY-MM>, C<YYYYMM>, C<YYYY-MM-DD>
 or a L<Date::Simple> object. Days are ignored.
+
+=head2 prev
+
+Returns a new C<Month::Simple> object for the month before the invocant month.
+
+=head2 next
+
+Returns a new C<Month::Simple> object for the month after the invocant month.
+
+=head2 delta(N)
+
+Returns a new C<Month::Simple> object. For positive C<N>, it goes forward C<N>
+months, and backwards for negative C<N>.
+
+=head2 first_second
+
+Returns a UNIX timestamp for the first second of the month.
+
+=head2 last_second
+
+Returns a UNIX timestamp for the last second of the month.
+
+=head2 first_day
+
+Returns a L<Date::Simple> object for the first day of the month.
 
 =head1 AUTHOR
 
