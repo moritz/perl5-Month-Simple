@@ -1,3 +1,9 @@
+libmonth-simple-perl (0.03) wheezy; urgency=low
+
+  * Support timestamps in ->new
+
+ -- Moritz Lenz <mlenz@noris.net>  Mon, 08 Jul 2013 10:13:33 +0200
+
 libmonth-simple-perl (0.02) wheezy; urgency=low
 
   * More documentation

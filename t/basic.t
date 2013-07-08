@@ -2,7 +2,7 @@ use 5.010;
 use strict;
 use warnings;
 
-use Test::More tests => 6;
+use Test::More tests => 7;
 
 use Month::Simple;
 
@@ -15,3 +15,4 @@ is $m->next, '2012-02', 'next';
 is $m->prev, '2011-12', 'prev';
 is $m->delta(12), '2013-01', 'delta';
 ok $m->first_second % 10 == 0, 'first second of this month is divisible by 10';
+is(Month::Simple->new(timestamp => 1373271113), '2013-07', 'new(timstamp => $ts)');

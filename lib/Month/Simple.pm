@@ -27,6 +27,10 @@ sub new {
     elsif ($str && $str =~ /^(\d{4})-?(\d{2})(?:-\d\d)?$/) {
         return bless { day => ymd($1, $2, 1) }, $class;
     }
+    elsif ($str && $str eq 'timestamp') {
+        my ($mon, $year) = (localtime $_[2])[4, 5];
+        return bless { day => ymd($year + 1900, $mon + 1, 1) }, $class;
+    }
     elsif ($str) {
         croak "Invalid month '$str' (valid: YYYY-MM, YYYYMM, YYYY-MM-DD)";
     }
@@ -88,7 +92,7 @@ Month::Simple - Simple month-based date arithmetics
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =head1 SYNOPSIS
 
@@ -106,6 +110,7 @@ Version 0.02
     Month::Simple->new();             # current month, using $^T as base
     Month::Simple->new('2011-01');
     Month::Simple->new('2011-01-02'); # day is ignored
+    Month::Simple->new(timestamp => time); # extract month from UNIX timestamp
 
 Creates a new C<Month::Simple> object. If no argument is provided, the current
 month (based on the startup of the script, i.e. based on C<$^T>) is returned.
