@@ -9,7 +9,7 @@ use Carp qw/croak/;
 
 use Data::Dumper;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use overload
     q[""] => sub { my $d = shift->first_day; return substr "$d", 0, 7 },
