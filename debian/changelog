@@ -1,3 +1,9 @@
+libmonth-simple-perl (0.04) wheezy; urgency=low
+
+  * Missing dependency
+
+ -- Moritz Lenz <mlenz@noris.net>  Mon, 17 Feb 2014 15:41:43 +0100
+
 libmonth-simple-perl (0.03) wheezy; urgency=low
 
   * Support timestamps in ->new
