@@ -9,7 +9,7 @@ use Carp qw/croak/;
 
 use Data::Dumper;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 use overload
     q[""] => sub { my $d = shift->first_day; return substr "$d", 0, 7 },
@@ -83,6 +83,9 @@ sub last_second {
     $self->next->first_second - 1;
 }
 
+sub month { shift->{day}->month }
+sub year  { shift->{day}->year }
+
 sub prev { shift->delta(-1) };
 sub next { shift->delta(1)  };
 
@@ -139,9 +142,26 @@ Returns a UNIX timestamp for the first second of the month.
 
 Returns a UNIX timestamp for the last second of the month.
 
+=head2 month
+
+Returns the month as an integer between 1 and 12.
+
+    say Month::Simple->new(201602)->month;      2
+
+=head2 year
+
+Returns the year as an integer.
+
+    say Month::Simple->new(201602)->year;       2016
+
 =head2 first_day
 
 Returns a L<Date::Simple> object for the first day of the month.
+
+=head1 State of this module
+
+This module has been in production usage for quite some time, and is
+considered complete in the sense that no more features are planned.
 
 =head1 AUTHOR
 
